@@ -1,3 +1,5 @@
+// http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
 #include <ESP8266WiFi.h>
 #include "NewPing.h"
 
