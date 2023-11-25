@@ -5,9 +5,9 @@
 #include <ArduinoJson.h>
 
 //Configuracion wifi servidor
-const char *ssid = "Consultores made";
-const char *password = "M5546148080m";
-String servidor = "http://funcionayaestoyharto.000webhostapp.com/index.php";
+const char *ssid = "";
+const char *password = "";
+String servidor = "";
 WiFiClient client;
 
 //Definicion de pines
@@ -15,7 +15,6 @@ int potPin = A0;
 int btnPin = 5;
 int led1 = 12;
 int led2 =13;
-
 
 void setup()
 {
@@ -42,8 +41,6 @@ void setup()
   digitalWrite(led2, LOW);
 }
 
-
-
 void loop() {
     int distance = analogRead(potPin);
     int btn = digitalRead(btnPin);
@@ -53,8 +50,6 @@ void loop() {
     Serial.print("Numero actual: ");
     Serial.println(distance);
     
-    //String sEnviado = "valor=" + String(distance) + " cm";
-    //String sEnviado = "valor=valor1";
     String sEnviado = "{ \"value1\": " + String(distance) + ", \"value2\":" + String(btn) +" }";
     Serial.println("Enviar a servidar: ");
     Serial.println("<- "+sEnviado);
